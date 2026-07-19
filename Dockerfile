@@ -4,8 +4,7 @@ WORKDIR /src
 COPY . .
 
 RUN dotnet restore "Crypto.Api.sln"
-RUN dotnet publish "Crypto.Api/Crypto.Api.csproj" -c Release -o /app/publish
-
+RUN dotnet publish "CryptoMarket/Crypto.Api.csproj" -c Release -o /app/publish
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 
