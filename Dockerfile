@@ -5,6 +5,7 @@ COPY . .
 
 RUN dotnet restore "Crypto.Api.sln"
 RUN dotnet publish "CryptoMarket/CryptoMarket.csproj" -c Release -o /app/publish
+
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 
@@ -14,4 +15,4 @@ ENV ASPNETCORE_URLS=http://+:8080
 
 EXPOSE 8080
 
-ENTRYPOINT ["dotnet", "Crypto.Api.dll"]
+ENTRYPOINT ["dotnet", "CryptoMarket.dll"]
