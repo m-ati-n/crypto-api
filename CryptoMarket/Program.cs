@@ -22,11 +22,9 @@ builder.Host.UseSerilog();
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-{
-    options.UseSqlServer(
+    options.UseNpgsql(
         builder.Configuration.GetConnectionString("DefaultConnection")
-    );
-});
+    ));
 builder.Services.AddAutoMapper(typeof(CoinProfile));
 builder.Services.AddHttpClient<ICoinGeckoService, CoinGeckoService>();
 builder.Services.AddScoped<ICoinRepository, CoinRepository>();

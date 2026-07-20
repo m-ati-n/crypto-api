@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Azure;
+//using Azure;
 using CryptoMarket.Caching;
 using CryptoMarket.DTOs;
 using CryptoMarket.Interfaces;
